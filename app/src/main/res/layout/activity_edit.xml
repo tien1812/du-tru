@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image_edit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_560" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_160"
+        android:layout_alignParentBottom="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/dp_20"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_avatar"
+                android:layout_width="@dimen/dp_56"
+                android:layout_height="@dimen/dp_56"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/text_name_author"
+                android:layout_width="@dimen/dp_160"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="TextView"
+                android:textSize="@dimen/dp_16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/image_avatar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_4"
+                android:text="Unsplash.com"
+                app:layout_constraintStart_toEndOf="@+id/image_avatar"
+                app:layout_constraintTop_toBottomOf="@+id/text_name_author" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_setscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_112"
+                android:layout_marginTop="@dimen/dp_16"
+                android:clickable="true"
+                app:backgroundTint="#FF5722"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_wallpaper_black_24dp" />
+
+            <ImageView
+                android:id="@+id/image_tune"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="@dimen/dp_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_avatar"
+                app:srcCompat="@drawable/ic_tune_black_24dp" />
+
+            <ImageView
+                android:id="@+id/image_crop"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="@dimen/dp_24"
+                app:layout_constraintStart_toEndOf="@+id/image_tune"
+                app:layout_constraintTop_toBottomOf="@+id/image_avatar"
+                app:srcCompat="@drawable/ic_crop_black_24dp" />
+
+            <ImageView
+                android:id="@+id/image_shared"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toStartOf="@+id/image_download"
+                app:layout_constraintStart_toEndOf="@+id/image_crop"
+                app:layout_constraintTop_toBottomOf="@+id/image_avatar"
+                app:srcCompat="@drawable/ic_share_black_24dp" />
+
+            <ImageView
+                android:id="@+id/image_download"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toStartOf="@+id/image_favorite"
+                app:layout_constraintStart_toEndOf="@+id/image_shared"
+                app:layout_constraintTop_toBottomOf="@+id/image_avatar"
+                app:srcCompat="@drawable/ic_file_download_black_24dp" />
+
+            <ImageView
+                android:id="@+id/image_favorite"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginStart="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginEnd="48dp"
+                android:backgroundTintMode="multiply"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image_download"
+                app:layout_constraintTop_toBottomOf="@+id/image_avatar"
+                app:srcCompat="@drawable/ic_favorite_border_black_24dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_tune"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_160"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/dp_16"
+        android:padding="@dimen/dp_8"
+        app:cardCornerRadius="@dimen/dp_20">
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:clickable="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_24">
+
+            <ImageView
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:src="@drawable/ic_blur_on_black_24dp" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_24"
+                android:src="@drawable/ic_wb_sunny_black_24dp" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_24"
+                android:src="@drawable/ic_tonality_black_24dp" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_24"
+                android:src="@drawable/ic_vignette_black_24dp" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_24"
+                android:src="@drawable/ic_color_lens_black_24dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

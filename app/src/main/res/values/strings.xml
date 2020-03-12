@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Photo World</string>
+    <string name="title_home">Home</string>
+    <string name="title_collection">Collections</string>
+    <string name="title_search">search</string>
+    <string name="title_dialog">Sellect Screen</string>
+    <string name="title_favorites">Favorites</string>
+</resources>
